@@ -1,0 +1,17 @@
+{
+  "name": "panorama",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "convert": "node converter.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.33.5",
+    "smartcrop-sharp": "^2.0.8"
+  }
+}

@@ -1,4 +1,6 @@
+Convert jpg to webp
+magick mogrify -format webp "assets/low/1/6/*.jpg" -path "assets/low/1/6/"
 Preparing low quol
-magick "assets/orig/1/27/*.jpg" -resize 2048x1024 -quality 75 -blur 0x2 -set filename:orig %t "assets/low/1/27/%[filename:orig].jpg"
+magick "assets/orig/1/6/*.jpg" -resize 2048x1024 -quality 60 -set filename:base "%[basename]" "assets/low/1/6/%[filename:base].jpg"
 Preparing tiles
-magick "assets/orig/1/27/*.jpg" -crop 512x512 -quality 90 -set filename:tile "%[fx:page.x/512]_%[fx:page.y/512]" -set filename:orig %t "assets/tiles/1/27/%[filename:orig]_%[filename:tile].jpg"
+magick "assets/orig/1/6/*.webp" -crop 512x512 -quality 90 -set filename:tile "%[fx:page.x/512]_%[fx:page.y/512]" -set filename:orig %t "assets/tiles/1/6/%[filename:orig]_%[filename:tile].webp"
