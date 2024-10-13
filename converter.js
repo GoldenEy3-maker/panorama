@@ -1,6 +1,5 @@
 import sharp from "sharp";
-import { readdir, mkdir, access, constants } from "node:fs/promises";
-import path from "node:path";
+import { readdir, mkdir } from "node:fs/promises";
 
 function extractBasename(file) {
   const extIdx = file.lastIndexOf(".");
@@ -32,11 +31,12 @@ async function main() {
                 `assets/low/${towerIndex}/${floorIndex}`
               );
 
-              // await sharp(`assets/orig/${towerIndex}/${floorIndex}/${image}`)
-              //   .webp({ quality: 60 })
-              //   .toFile(
-              //     `assets/low/${towerIndex}/${floorIndex}/${basename}.webp`
-              //   );
+              await sharp(`assets/orig/${towerIndex}/${floorIndex}/${image}`)
+                .resize({ width: 2048, height: 1024 })
+                .webp({ quality: 40 })
+                .toFile(
+                  `assets/low/${towerIndex}/${floorIndex}/${basename}.webp`
+                );
 
               await ensureDirectoryExistence(
                 `assets/tiles/${towerIndex}/${floorIndex}`
