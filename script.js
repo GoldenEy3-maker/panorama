@@ -9,7 +9,7 @@ const floorsData = {
 
 let currentTower = 1;
 let currentFloor = floorsData[currentTower][0];
-let currentTime = "day";
+let currentTime = "morning";
 
 const viewer = new Viewer({
   plugins: [
@@ -30,7 +30,7 @@ const viewer = new Viewer({
     rows: 8,
     baseUrl: `./assets/low/${currentTower}/${currentFloor}/${currentTime}.webp`,
     tileUrl: (col, row) => {
-      return `./assets/tiles/${currentTower}/${currentFloor}/${currentTime}_files/13/${col}_${row}.webp`;
+      return `./assets/tiles/${currentTower}/${currentFloor}/${currentTime}_${col}_${row}.webp`;
     },
   },
   lang: {
@@ -111,7 +111,7 @@ function setTowerHandler(tower) {
       rows: 8,
       baseUrl: `./assets/low/${tower}/${floor}/${currentTime}.webp`,
       tileUrl: (col, row) => {
-        return `./assets/tiles/${tower}/${floor}/${currentTime}_files/13/${col}_${row}.webp`;
+        return `./assets/tiles/${tower}/${floor}/${currentTime}_${col}_${row}.webp`;
       },
     })
     .then(() => {
@@ -135,7 +135,7 @@ function setFloorHandler(floor) {
       rows: 8,
       baseUrl: `./assets/low/${currentTower}/${floor}/${currentTime}.webp`,
       tileUrl: (col, row) => {
-        return `./assets/tiles/${currentTower}/${floor}/${currentTime}_files/13/${col}_${row}.webp`;
+        return `./assets/tiles/${currentTower}/${floor}/${currentTime}_${col}_${row}.webp`;
       },
     })
     .finally(() => {
@@ -155,7 +155,7 @@ function setTimeHandler(time) {
       rows: 8,
       baseUrl: `./assets/low/${currentTower}/${currentFloor}/${time}.webp`,
       tileUrl: (col, row) => {
-        return `./assets/tiles/${currentTower}/${currentFloor}/${time}_files/13/${col}_${row}.webp`;
+        return `./assets/tiles/${currentTower}/${currentFloor}/${time}_${col}_${row}.webp`;
       },
     })
     .finally(() => {
