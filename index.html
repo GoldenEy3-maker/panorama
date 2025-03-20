@@ -9,10 +9,8 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./libs/@photo-sphere-viewer/index.min.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div id="viewer">
@@ -93,14 +91,13 @@
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-          "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.10.1/index.module.js",
-          "@photo-sphere-viewer/equirectangular-tiles-adapter": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/equirectangular-tiles-adapter@5.10.1/index.module.min.js",
-          "@photo-sphere-viewer/visible-range-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin@5.10.1/index.module.min.js"
+          "three": "./libs/three.module.min.js",
+          "@photo-sphere-viewer/core": "./libs/@photo-sphere-viewer/core.min.js",
+          "@photo-sphere-viewer/equirectangular-tiles-adapter": "./libs/@photo-sphere-viewer/equirectangular-tiles-adapter.min.js",
+          "@photo-sphere-viewer/visible-range-plugin": "./libs/@photo-sphere-viewer/visible-range-plugin.min.js"
         }
       }
     </script>
-
     <script type="module" src="script.js"></script>
   </body>
 </html>
